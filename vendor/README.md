@@ -17,4 +17,4 @@ This exercise introduced figma as a design sharing tool, techniques in building 
 #Deployment
 
 This project is deployed to GitHub pages
-deployment link-
+deployment link- https://miagi-jade.github.io/se_project_spots/
