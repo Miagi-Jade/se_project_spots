@@ -1,0 +1,20 @@
+.cards__list {
+  list-style-type: none;
+  margin: 0;
+  padding: 20px 0 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 413px);
+  gap: 20px;
+  justify-content: center;
+}
+.cards {
+  display: grid;
+  font-family: "Poppins", Arial, Helvetica;
+  border-bottom: 1px solid rgba(33, 33, 33, 0.4);
+}
+@media screen and (max-width: 627px) {
+  .cards__list {
+    max-width: 288px;
+    margin: 0 auto;
+  }
+}
