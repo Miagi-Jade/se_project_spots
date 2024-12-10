@@ -1,9 +1,11 @@
 .footer {
   font-family: "Poppins", Arial, Helvetica;
+  font-weight: 400;
   display: flex;
   justify-content: center;
   color: rgba(33, 33, 33, 0.7);
   padding: 60px 0;
+  font-size: 16px;
 }
 
 .footer__tag {
