@@ -9,12 +9,13 @@
 }
 .cards {
   display: grid;
-  font-family: "Poppins", Arial, Helvetica;
+  font-family: "Poppins", Arial, Helvetica, sans-serif;
   border-bottom: 1px solid rgba(33, 33, 33, 0.4);
 }
 @media screen and (max-width: 627px) {
   .cards__list {
     max-width: 288px;
     margin: 0 auto;
+    grid-template-columns: repeat(auto-fit, 288px);
   }
 }
