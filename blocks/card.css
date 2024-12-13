@@ -1,7 +1,7 @@
 .card__image {
   height: 413px;
   width: 413px;
-  border-radius: 10px;
+  border-radius: 8px;
 }
 
 .card {
@@ -24,6 +24,7 @@
   width: 23px;
   background-color: transparent;
   opacity: 0.4;
+  cursor: pointer;
 }
 
 .card__button:hover {
@@ -39,6 +40,7 @@
   white-space: nowrap;
   overflow: hidden;
   max-width: 353px;
+  color: #212121;
 }
 
 @media screen and (max-width: 627px) {

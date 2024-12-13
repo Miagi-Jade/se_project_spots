@@ -17,5 +17,6 @@
     max-width: 288px;
     margin: 0 auto;
     grid-template-columns: repeat(auto-fit, 288px);
+    margin-bottom: 22px;
   }
 }
