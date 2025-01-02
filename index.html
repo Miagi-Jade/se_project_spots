@@ -118,6 +118,33 @@
       <footer class="footer">
         <p class="footer__tag">2024 &copy; Jade Ario</p>
       </footer>
+      <div class="modal modal_opened">
+        <div class="modal__container">
+          <button type="submit" class="modal__button-close"></button>
+          <h2 class="modal__title">Edit Profile</h2>
+          <form name="edit-profile" class="modal__form">
+            <label for="name" class="modal__label">
+              Name
+              <input
+                id="name"
+                type="text"
+                class="modal__input"
+                placeholder="Type Your Name"
+              />
+            </label>
+            <label for="description" class="modal__label">
+              Description
+              <input
+                id="description"
+                type="text"
+                class="modal__input"
+                placeholder="Describe Yourself"
+              />
+            </label>
+            <button type="submit" class="modal__button-submit">Save</button>
+          </form>
+        </div>
+      </div>
     </div>
   </body>
 </html>
