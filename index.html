@@ -44,74 +44,14 @@
 
         <section class="cards page__section">
           <ul class="cards__list">
-            <li class="card">
-              <img
-                class="card__image"
-                src="./images/1-photo-by-moritz-feldmann-from-pexels.jpg"
-                alt="Val Thorens"
-              />
-              <div class="card__row">
-                <button type="button" class="card__button"></button>
-                <h2 class="card__caption">Val Thorens</h2>
-              </div>
-            </li>
-            <li class="card">
-              <img
-                class="card__image"
-                src="./images/2-photo-by-ceiline-from-pexels.jpg"
-                alt="Restaurant Terrace"
-              />
-              <div class="card__row">
-                <button type="button" class="card__button"></button>
-                <h2 class="card__caption">Restaurant Terrace</h2>
-              </div>
-            </li>
-            <li class="card">
-              <img
-                class="card__image"
-                src="./images/3-photo-by-tubanur-dogan-from-pexels.jpg"
-                alt="An Outdoor Cafe"
-              />
-              <div class="card__row">
-                <button type="button" class="card__button"></button>
-                <h2 class="card__caption">An Outdoor Cafe</h2>
-              </div>
-            </li>
-            <li class="card">
-              <img
-                class="card__image"
-                src="./images/4-photo-by-maurice-laschet-from-pexels.jpg"
-                alt="A very long bridge, over the forest..."
-              />
-              <div class="card__row">
-                <button type="button" class="card__button"></button>
-                <h2 class="card__caption">
-                  A very long bridge, over the forest
-                </h2>
-              </div>
-            </li>
-            <li class="card">
-              <img
-                class="card__image"
-                src="./images/5-photo-by-van-anh-nguyen-from-pexels.jpg"
-                alt="Tunnel with morning light"
-              />
-              <div class="card__row">
-                <button type="button" class="card__button"></button>
-                <h2 class="card__caption">Tunnel with morning light</h2>
-              </div>
-            </li>
-            <li class="card">
-              <img
-                class="card__image"
-                src="./images/6-photo-by-moritz-feldmann-from-pexels.jpg"
-                alt="Mountain House"
-              />
-              <div class="card__row">
-                <button type="button" class="card__button"></button>
-                <h2 class="card__caption">Mountain House</h2>
-              </div>
-            </li>
+            <template id="card-template">
+              <li class="card">
+                <img class="card__image" src="" alt="" />
+                <div class="card__row">
+                  <button type="button" class="card__button"></button>
+                  <h2 class="card__caption"></h2>
+                </div></li
+            ></template>
           </ul>
         </section>
       </main>
@@ -123,19 +63,19 @@
           <button type="submit" class="modal__button-close"></button>
           <h2 class="modal__title">Edit Profile</h2>
           <form name="edit-profile" class="modal__form">
-            <label for="name" class="modal__label">
+            <label for="name_input" class="modal__label">
               Name
               <input
-                id="name"
+                id="name_input"
                 type="text"
                 class="modal__input"
                 placeholder="Type Your Name"
               />
             </label>
-            <label for="description" class="modal__label">
+            <label for="description_input" class="modal__label">
               Description
               <input
-                id="description"
+                id="description_input"
                 type="text"
                 class="modal__input"
                 placeholder="Describe Yourself"
