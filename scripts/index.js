@@ -1,31 +1,31 @@
 const initialCards = [
   {
-    Name: "Val Thorens",
+    name: "Val Thorens",
     link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/1-photo-by-moritz-feldmann-from-pexels.jpg",
   },
 
   {
-    Name: "Restaurant terrace",
+    name: "Restaurant terrace",
     link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/2-photo-by-ceiline-from-pexels.jpg",
   },
 
   {
-    Name: "An outdoor cafeName",
+    name: "An outdoor cafeName",
     link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/3-photo-by-tubanur-dogan-from-pexels.jpg",
   },
 
   {
-    Name: "A very long bridge, over the forest and through the trees",
+    name: "A very long bridge, over the forest and through the trees",
     link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/4-photo-by-maurice-laschet-from-pexels.jpg",
   },
 
   {
-    Name: "Tunnel with morning light",
+    name: "Tunnel with morning light",
     link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/5-photo-by-van-anh-nguyen-from-pexels.jpg",
   },
 
   {
-    Name: "Mountain house",
+    name: "Mountain house",
     link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/6-photo-by-moritz-feldmann-from-pexels.jpg",
   },
 ];
@@ -56,10 +56,10 @@ function getCardElement(data) {
     .cloneNode(true);
 
   const cardNameElement = cardElement.querySelector(".card__caption");
-  cardNameElement.textContent = data.Name;
+  cardNameElement.textContent = data.name;
   const cardLinkElement = cardElement.querySelector(".card__image");
   cardLinkElement.src = data.link;
-  cardLinkElement.alt = data.Name;
+  cardLinkElement.alt = data.name;
   return cardElement;
 }
 
