@@ -29,10 +29,17 @@ const initialCards = [
     link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/6-photo-by-moritz-feldmann-from-pexels.jpg",
   },
 ];
-console.log(initialCards);
 
+const cardTemplate = document.querySelector("#card-template");
+const modalCloseButton = document.querySelector(".modal__button-close");
 const profileEditButton = document.querySelector(".profile__button");
 const profileEditModal = document.querySelector("#edit-profile-modal");
+const cardsList = document.querySelector(".cards__list");
+const profileTitle = document.querySelector(".profile__title");
+const profileTitleModal = document.querySelector("#name_input");
+const profileSubtitle = document.querySelector(".profile__subtitle");
+const profileSubtitleModal = document.querySelector("#description_input");
+const profileForm = document.querySelector(".modal__form");
 
 function openModal() {
   profileTitleModal.value = profileTitle.textContent;
@@ -42,20 +49,25 @@ function openModal() {
 
 profileEditButton.addEventListener("click", openModal);
 
-const modalCloseButton = document.querySelector(".modal__button-close");
+function getCardElement(data) {
+  console.log(data);
+  const cardElement = cardTemplate.content
+    .querySelector(".card")
+    .cloneNode(true);
+
+  const cardNameElement = cardElement.querySelector(".card__caption");
+  cardNameElement.textContent = data.Name;
+  const cardLinkElement = cardElement.querySelector(".card__image");
+  cardLinkElement.src = data.link;
+  cardLinkElement.alt = data.Name;
+  return cardElement;
+}
 
 function closeModal() {
   profileEditModal.classList.remove("modal_opened");
 }
 
 modalCloseButton.addEventListener("click", closeModal);
-
-const profileTitle = document.querySelector(".profile__title");
-const profileTitleModal = document.querySelector("#name_input");
-
-const profileSubtitle = document.querySelector(".profile__subtitle");
-const profileSubtitleModal = document.querySelector("#description_input");
-const profileForm = document.querySelector(".modal__form");
 
 function handleProfileFormSubmit(evt) {
   evt.preventDefault();
@@ -65,3 +77,8 @@ function handleProfileFormSubmit(evt) {
 }
 
 profileForm.addEventListener("submit", handleProfileFormSubmit);
+
+for (let i = 0; i < initialCards.length; i++) {
+  const cardElement = getCardElement(initialCards[i]);
+  cardsList.prepend(cardElement);
+}
