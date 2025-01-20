@@ -29,10 +29,14 @@
   right: 50px;
   width: 40px;
   height: 40px;
-  background-image: url(../images/Close\ Icon.svg);
+  background-image: url(../images/Group\ 27.svg);
   border: none;
   background-color: #fff;
   padding: 0;
+}
+
+.modal__button-close:hover {
+  opacity: 0.4;
 }
 
 .modal__title {
@@ -79,6 +83,10 @@
   height: 52px;
   color: #fff;
   font-family: "Poppins", Arial, Helvetica, sans-serif;
+}
+
+.modal__button-submit:hover {
+  opacity: 0.8;
 }
 
 @media screen and (max-width: 740px) {

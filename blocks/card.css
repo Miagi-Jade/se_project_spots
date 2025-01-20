@@ -30,6 +30,13 @@
 .card__button:hover {
   opacity: 1;
 }
+.card__button_liked {
+  background-image: url(../images/Liked.svg);
+  opacity: 1;
+}
+.card__button_liked:hover {
+  background-image: url(../images/likedhover.svg);
+}
 
 .card__caption {
   margin: 0;
