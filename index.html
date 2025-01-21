@@ -46,6 +46,7 @@
           <ul class="cards__list">
             <template id="card-template">
               <li class="card">
+                <button type="button" class="card__button-delete"></button>
                 <img class="card__image" src="" alt="" />
                 <div class="card__row">
                   <button type="button" class="card__button"></button>
@@ -116,6 +117,14 @@
             </label>
             <button type="submit" class="modal__button-submit">Save</button>
           </form>
+        </div>
+      </div>
+
+      <div class="modal" id="preview-modal">
+        <div class="modal__container-preview">
+          <button type="button" class="modal__button-close-preview"></button>
+          <img class="modal__image-preview" src=" " alt=" " />
+          <figcaption class="modal__caption-preview"></figcaption>
         </div>
       </div>
     </div>

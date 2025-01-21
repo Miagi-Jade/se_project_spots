@@ -28,6 +28,11 @@ const initialCards = [
     name: "Mountain house",
     link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/6-photo-by-moritz-feldmann-from-pexels.jpg",
   },
+
+  {
+    name: "Red Bridge",
+    link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/7-photo-by-griffin-wooldridge-from-pexels.jpg",
+  },
 ];
 
 const cardTemplate = document.querySelector("#card-template");
@@ -46,6 +51,12 @@ const newPostClose = document.querySelector(".card-modal-close");
 const newPostForm = newPostModal.querySelector(".modal__form");
 const newPostName = newPostModal.querySelector("#card-caption-name_input");
 const newPostLink = newPostModal.querySelector("#card-image-link_input");
+const previewModal = document.querySelector("#preview-modal");
+const previewModalCloseBtn = document.querySelector(
+  ".modal__button-close-preview"
+);
+const modalImageLink = document.querySelector(".modal__image-preview");
+const modalImageCaption = document.querySelector(".modal__caption-preview");
 
 function openModal(modal) {
   modal.classList.add("modal_opened");
@@ -76,7 +87,15 @@ function getCardElement(data) {
   likeButton.addEventListener("click", () => {
     likeButton.classList.toggle("card__button_liked");
   });
+  cardLinkElement.addEventListener("click", () => {
+    previewModal.classList.add("modal_opened");
+    modalImageLink.src = data.link;
+    modalImageCaption.textContent = data.name;
+  });
 
+  previewModalCloseBtn.addEventListener("click", () => {
+    previewModal.classList.remove("modal_opened");
+  });
   return cardElement;
 }
 
@@ -120,4 +139,11 @@ profileForm.addEventListener("submit", handleProfileFormSubmit);
 initialCards.forEach((item) => {
   const cardElement = getCardElement(item);
   cardsList.prepend(cardElement);
+
+  const cardDeleteButton = cardElement.querySelector(".card__button-delete");
+
+  cardDeleteButton.addEventListener("click", () => {
+    const itemCard = cardDeleteButton.closest(".card");
+    itemCard.remove();
+  });
 });
