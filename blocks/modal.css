@@ -14,7 +14,7 @@
   transition: visibility linear 0.5s, opacity 0.5s linear;
 }
 
-.modal_opened {
+.openModal {
   visibility: visible;
   opacity: 1;
 }
@@ -36,6 +36,7 @@
   border: none;
   background-color: #fff;
   padding: 0;
+  cursor: pointer;
 }
 
 .modal__button-close:hover {
@@ -90,6 +91,7 @@
   height: 52px;
   color: #fff;
   font-family: "Poppins", Arial, Helvetica, sans-serif;
+  cursor: pointer;
 }
 
 .modal__container-preview {
@@ -128,6 +130,7 @@
   border: none;
   background-color: transparent;
   opacity: 0.4;
+  cursor: pointer;
 }
 
 .modal__button-close-preview:hover {
