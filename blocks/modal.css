@@ -14,7 +14,7 @@
   transition: visibility linear 0.5s, opacity 0.5s linear;
 }
 
-.openModal {
+.modal_opened {
   visibility: visible;
   opacity: 1;
 }
@@ -64,7 +64,7 @@
   border-color: #212121;
   height: 52px;
   max-width: 630px;
-  padding: 0 0 0 12px;
+  padding-left: 12px;
 }
 
 .modal__input:hover {
@@ -148,13 +148,14 @@
 
   .modal__container {
     padding: 12px;
-    max-width: 276px;
+    max-width: 300px;
     max-height: 336px;
   }
   .modal__input {
     width: 276px;
     height: 52px;
-    padding: 0;
+    padding: 0 12px;
+    justify-content: center;
   }
   .modal__button-submit {
     width: 276px;
@@ -170,5 +171,9 @@
     font-size: 20px;
     margin: 0 0 24px;
     padding: 10px 0;
+  }
+  .modal__container-preview {
+    max-width: 288px;
+    margin: auto;
   }
 }
