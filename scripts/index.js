@@ -61,6 +61,7 @@ const modalImageLink = document.querySelector(".modal__image-preview");
 const modalImageCaption = document.querySelector(".modal__caption-preview");
 const closeButtons = document.querySelectorAll(".modal__button-close");
 const newSubmitButton = newPostModal.querySelector(".modal__button-submit");
+
 const modals = document.querySelectorAll(".modal");
 
 modals.forEach((modal) => {
@@ -74,7 +75,7 @@ modals.forEach((modal) => {
 function openModal(modal) {
   modal.classList.add("modal_opened");
   modal.addEventListener("keypress", () => {
-    keyHandler(modal);
+    keyHandlerent();
   });
 }
 
@@ -85,10 +86,11 @@ newPostButton.addEventListener("click", () => {
 profileEditButton.addEventListener("click", () => {
   profileTitleModal.value = profileTitle.textContent;
   profileSubtitleModal.value = profileSubtitle.textContent;
-  // resetValidation(
-  // profileForm,
-  //[profileTitleModal, profileSubtitleModal],
-  //settings );
+  resetValidation(
+    profileForm,
+    [profileTitleModal, profileSubtitleModal],
+    settings
+  );
   openModal(profileEditModal);
 });
 
@@ -155,9 +157,18 @@ closeButtons.forEach((button) => {
   button.addEventListener("click", () => closeModal(popup));
 });
 
-function keyHandler(evt) {
-  if (evt.key === "enter") {
+function keyHandlerent(evt) {
+  if (evt.key === "Enter") {
     handleNewPostSubmit();
     handleProfileFormSubmit();
   }
 }
+
+function closeModalOnEsc(evt) {
+  if (evt.key === "Escape") {
+    const modal = document.querySelector(".modal_opened");
+    closeModal(modal);
+  }
+}
+
+document.addEventListener("keydown", closeModalOnEsc);
