@@ -37,6 +37,8 @@
   background-color: #fff;
   padding: 0;
   cursor: pointer;
+  z-index: 1;
+  background-position: center;
 }
 
 .modal__button-close:hover {
@@ -53,7 +55,7 @@
 
 .modal__input {
   display: block;
-  margin-bottom: 32px;
+
   font-family: "Poppins", Arial, Helvetica, sans-serif;
   font-size: 20px;
   font-weight: 500;
@@ -80,6 +82,7 @@
   font-size: 16px;
   color: #212121;
   opacity: 0.7;
+  margin-bottom: 32px;
 }
 
 .modal__button-submit {
@@ -118,10 +121,13 @@
   font-size: 20px;
   line-height: 24px;
   margin: 0;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  width: fit-content;
 }
 
 .modal__button-close-preview {
-  background-image: url(../images/Group\ 27.svg);
+  background-image: url(../images/Property\ 1=Variant3.svg);
   top: 0;
   right: -52.5px;
   position: absolute;
@@ -129,16 +135,33 @@
   height: 40px;
   border: none;
   background-color: transparent;
-  opacity: 0.4;
+  opacity: 1;
   cursor: pointer;
 }
 
 .modal__button-close-preview:hover {
-  opacity: 1;
+  opacity: 0.4;
 }
 
 .modal__button-submit:hover {
   opacity: 0.8;
+}
+
+.modal__error {
+  display: block;
+  color: #ff0000;
+  font-family: "Poppins", Arial, Helvetica, sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  opacity: 0.7;
+}
+
+.modal__input-error {
+  border: 1px solid rgba(255, 0, 0, 0.6);
+}
+
+.modal__button-inactive {
+  opacity: 0.5;
 }
 
 @media screen and (max-width: 740px) {
@@ -148,14 +171,17 @@
 
   .modal__container {
     padding: 12px;
-    max-width: 300px;
-    max-height: 336px;
+    max-width: 276px;
+    max-height: 432px;
+    margin: auto 10px;
   }
+
   .modal__input {
-    width: 276px;
+    width: 252px;
     height: 52px;
     padding: 0 12px;
     justify-content: center;
+    font-size: 16px;
   }
   .modal__button-submit {
     width: 276px;
@@ -174,6 +200,19 @@
   }
   .modal__container-preview {
     max-width: 288px;
-    margin: auto;
+    margin: 0;
+    padding: 0;
+  }
+  .modal__image-preview {
+    max-width: 288px;
+  }
+
+  .modal__button-close-preview {
+    top: -48px;
+  }
+
+  .modal__caption-preview {
+    font-size: 16px;
+    max-width: 288px;
   }
 }
