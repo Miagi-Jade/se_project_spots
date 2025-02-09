@@ -13,6 +13,7 @@ The exercise introduced figma as a design sharing tool, techniques in building a
 - html
 - css
 - responsive design
+- JavaScript
 
 #Deployment
 
