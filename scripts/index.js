@@ -61,9 +61,21 @@ const modalImageLink = document.querySelector(".modal__image-preview");
 const modalImageCaption = document.querySelector(".modal__caption-preview");
 const closeButtons = document.querySelectorAll(".modal__button-close");
 const newSubmitButton = newPostModal.querySelector(".modal__button-submit");
+const modals = document.querySelectorAll(".modal");
+
+modals.forEach((modal) => {
+  modal.addEventListener("click", function (event) {
+    if (event.target.classList.contains("modal")) {
+      closeModal(modal);
+    }
+  });
+});
 
 function openModal(modal) {
   modal.classList.add("modal_opened");
+  modal.addEventListener("keypress", () => {
+    keyHandler(modal);
+  });
 }
 
 newPostButton.addEventListener("click", () => {
@@ -142,3 +154,10 @@ closeButtons.forEach((button) => {
   const popup = button.closest(".modal");
   button.addEventListener("click", () => closeModal(popup));
 });
+
+function keyHandler(evt) {
+  if (evt.key === "enter") {
+    handleNewPostSubmit();
+    handleProfileFormSubmit();
+  }
+}

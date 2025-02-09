@@ -4,7 +4,6 @@ const settings = {
   submitButtonSelector: ".modal__button-submit",
   inactiveButtonClass: "modal__button-inactive",
   inputErrorClass: "modal__input-error",
-  errorClass: "modal__error",
 };
 
 const showInputError = (formElement, inputElement, errorMessage, config) => {
@@ -13,7 +12,6 @@ const showInputError = (formElement, inputElement, errorMessage, config) => {
   );
   errorMessageElement.textContent = errorMessage;
   inputElement.classList.add(config.inputErrorClass);
-  errorMessageElement.classlist.add(config.errorClass);
 };
 
 const hideInputError = (formElement, inputElement, config) => {
@@ -22,7 +20,6 @@ const hideInputError = (formElement, inputElement, config) => {
   );
   errorMessageElement.textContent = "";
   inputElement.classList.remove(config.inputErrorClass);
-  errorMessageElement.classlist.remove(config.errorClass);
 };
 
 const checkInputValidity = (formElement, inputElement, config) => {
@@ -69,8 +66,6 @@ const setEventListeners = (formElement, config) => {
     formElement.querySelectorAll(config.inputSelector)
   );
   const buttonElement = formElement.querySelector(config.submitButtonSelector);
-  console.log(inputList);
-  console.log(buttonElement);
 
   toggleButtonState(inputList, buttonElement, config);
   inputList.forEach((inputElement) => {
