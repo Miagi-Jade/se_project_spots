@@ -74,8 +74,11 @@ modals.forEach((modal) => {
 
 function openModal(modal) {
   modal.classList.add("modal_opened");
-  modal.addEventListener("keypress", () => {
-    keyHandlerent();
+  modal.addEventListener("keypress", (evt) => {
+    if (evt.key === "Enter") {
+      handleNewPostSubmit();
+      handleProfileFormSubmit();
+    }
   });
 }
 
@@ -157,12 +160,12 @@ closeButtons.forEach((button) => {
   button.addEventListener("click", () => closeModal(popup));
 });
 
-function keyHandlerent(evt) {
+/*function keyHandlerent(evt) {
   if (evt.key === "Enter") {
     handleNewPostSubmit();
     handleProfileFormSubmit();
   }
-}
+}*/
 
 function closeModalOnEsc(evt) {
   if (evt.key === "Escape") {
