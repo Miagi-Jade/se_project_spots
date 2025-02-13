@@ -74,12 +74,13 @@ modals.forEach((modal) => {
 
 function openModal(modal) {
   modal.classList.add("modal_opened");
-  modal.addEventListener("keypress", (evt) => {
+  /*modal.addEventListener("keypress", () => {
     if (evt.key === "Enter") {
       handleNewPostSubmit();
       handleProfileFormSubmit();
     }
-  });
+  });*/
+  document.addEventListener("keydown", handleEscape);
 }
 
 newPostButton.addEventListener("click", () => {
@@ -115,6 +116,7 @@ function getCardElement(data) {
   cardLinkElement.addEventListener("click", () => {
     openModal(previewModal);
     modalImageLink.src = data.link;
+    modalImageLink.alt = data.alt;
     modalImageCaption.textContent = data.name;
   });
 
@@ -128,6 +130,7 @@ function getCardElement(data) {
 
 function closeModal(modal) {
   modal.classList.remove("modal_opened");
+  document.removeEventListener("keydown", handleEscape);
 }
 
 function handleProfileFormSubmit(evt) {
@@ -160,18 +163,9 @@ closeButtons.forEach((button) => {
   button.addEventListener("click", () => closeModal(popup));
 });
 
-/*function keyHandlerent(evt) {
-  if (evt.key === "Enter") {
-    handleNewPostSubmit();
-    handleProfileFormSubmit();
-  }
-}*/
-
-function closeModalOnEsc(evt) {
+function handleEscape(evt) {
   if (evt.key === "Escape") {
-    const modal = document.querySelector(".modal_opened");
-    closeModal(modal);
+    const openedPopup = document.querySelector(".modal_opened");
+    closeModal(openedPopup);
   }
 }
-
-document.addEventListener("keydown", closeModalOnEsc);

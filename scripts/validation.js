@@ -2,7 +2,7 @@ const settings = {
   formSelector: ".modal__form",
   inputSelector: ".modal__input",
   submitButtonSelector: ".modal__button-submit",
-  inactiveButtonClass: "modal__button-inactive",
+  inactiveButtonClass: "modal__button-submit_inactive",
   inputErrorClass: "modal__input-error",
 };
 
